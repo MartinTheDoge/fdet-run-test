@@ -8,7 +8,7 @@ Website application for fake-news detection using modified AlBERT AI
 
 ## Installing all packages manually
 Input all of these commands into powershell and wait for them to install and download (done automatically)
-```
+```powershell
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install farm-haystack
 pip install fastapi
@@ -43,6 +43,9 @@ Miloš Zeman had been president for 8 years
 Miloš Zeman had been president for 15 years
 Andrej babiš said he would not help the Baltics and Poland
 ```
+and its values respectively <br>
+Support: 72.1%, 80.8%, 72.7% and 84.5%
+
 ## fDetAPI
 sample text
 
