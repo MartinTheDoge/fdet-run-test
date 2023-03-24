@@ -31,7 +31,7 @@ TextValidate().main("Your sentence here")
 ```
 
 ## Text Benchmark and its values
-For testing out AIBertas functionality, we use 2 common knowledge Czech sentences
+For testing out our modified AIBertas functionality, we use 2 common knowledge Czech sentences
 ```
 Miloš Zeman had been president for 10 years
 Andrej babiš said he would not help the Baltics and Poland if they were invaded
@@ -44,7 +44,11 @@ Miloš Zeman had been president for 15 years
 Andrej babiš said he would not help the Baltics and Poland
 ```
 and its values respectively <br>
-Support: 72.1%, 80.8%, 72.7% and 84.5%
+```
+1stAI: Percentage
+2ndAI: Percentage
+3rdAI: Percentage
+```
 
 ## fDetAPI
 sample text
