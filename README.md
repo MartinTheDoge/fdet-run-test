@@ -29,7 +29,14 @@ open this cloned repository in your desired editor and call TextValidate() class
 ```py
 TextValidate().main("Your sentence here")
 ```
-
+After the AI processes those given values, you should expect all of these values: <br>
+<br>
+Claim <br>
+Supports <br>
+Refutes <br>
+Evidence <br>
+<br>
+test
 ## Text Benchmark and its values
 For testing out our modified AIBertas functionality, we use 2 common knowledge Czech sentences
 ```
