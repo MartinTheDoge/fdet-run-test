@@ -9,14 +9,12 @@ Website application for fake-news detection using modified AlBERT AI
 ## Installing all packages manually
 Input all of these commands into powershell and wait for them to install and download (done automatically)
 ```powershell
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-pip install farm-haystack
-pip install fastapi
-pip install yake
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
 ```
-if you have AMD GPU then
+if you have AMD GPU then (linux needed
 ```
-sample text
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.4.2
 ```
 
 ## First time use
@@ -25,9 +23,24 @@ Clone this repository to your local machine using
 git clone https://github.com/fDet/fdet.git
 ```
 **Make sure that all packages from "requirements.txt" are installed** <br>
-open this cloned repository in your desired editor and call TextValidate() class in backend/main.py using 
+open this cloned repository in your desired editor an go to backend/example.py. <br>
+You should see this code
 ```py
-TextValidate().main("Your sentence here")
+from wikipedia import Wikipedia
+import requests
+import json
+
+wiki = Wikipedia()
+text = "Petr Pavel is one of the elected presidents of the Czech republic"
+titles = wiki.search(text)
+sentences = wiki.extract_page(titles[0])
+json_conv = {titles[0]:sentences}
+
+with open("json_wiki.jsonl", 'a', encoding="utf-8") as json_outp:
+    json.dump(json_conv, json_outp, indent=4, separators=", ", ensure_ascii=False)
+    json_outp.write("\n")
+
+req = requests.get("http://127.0.0.1:8002/backend/eval_debug", params={"text":text}).json()
 ```
 After the AI processes those given values, you should expect all of these values: <br>
 <br>
