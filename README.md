@@ -30,8 +30,8 @@ from wikipedia import Wikipedia
 import requests
 import json
 
-wiki = Wikipedia()
-text = "Petr Pavel is one of the elected presidents of the Czech republic"
+wiki = Wikipedia() 
+text = "Your sentence here"
 titles = wiki.search(text)
 sentences = wiki.extract_page(titles[0])
 json_conv = {titles[0]:sentences}
@@ -42,6 +42,7 @@ with open("json_wiki.jsonl", 'a', encoding="utf-8") as json_outp:
 
 req = requests.get("http://127.0.0.1:8002/backend/eval_debug", params={"text":text}).json()
 ```
+To briefly explain what this code does, it searches for a similarty in given sentence to find a title from Wikipedia that refers to it, it then extracts the page and converts it to a json  
 After the AI processes those given values, you should expect all of these values: <br>
 <br>
 Claim <br>
