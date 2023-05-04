@@ -1,8 +1,10 @@
-# fDet
-Website application for fake-news detection using modified AlBERT AI. This is an open-source repository and can be used by anyone and here's is a complete guide on how to do it
+# fDet by ByteSpirit
+Website application for fake-news detection using modified AlBERT AI. <br> 
+This is an open-source repository and can be used by anyone and here's is a complete guide on how to do it
 
 ## About us
-We are a group of 5 people that decided to battle the endless war against fake news. This fact checking AI was created over the course of 4 months. Come and see for yourself. <br>
+We are a group of 5 people that decided to battle the endless war against fake news. <br> 
+This fact checking AI was created over the course of 4 months. Come and see for yourself. <br>
 Website: www.fdet.eu
 
 ## Requirements
@@ -34,9 +36,20 @@ import requests
 
 text = "Your sentence here"
 
-req = requests.get("http://127.0.0.1:8002/backend/eval_debug", params={"text":text}).json()
+req = requests.get("http://127.0.0.1:8002/backend/[evaluation system]", params={"text":text}).json()
+
+Available evaluation systems: /backend/v1/eval_DPR, /backend/v1/eval_fast, /backend/rag/eval_DPR, /backend/rag/eval_ada /backend/rag/eval_bm25
+Output examples: /backend/v1/dummy, /backend/rag/dummy
 ```
-To briefly explain what this code does, it searches for a similarty in given sentence to find a title from Wikipedia that refers to it, it then extracts the page and converts it to a json  
+First, you need to start FAST API local server, you can do this by entering ```py api.py``` or ```uvicorn api:app --reload``` into python terminal <br>
+After waiting a couple of seconds, you should see this output
+```py
+INFO:     Started server process [ProcessID]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8002/ (Press CTRL+C to quit)
+```
+
 After the AI processes the given text, you should expect these values: <br>
 <br>
 Claim <br>
