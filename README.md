@@ -1,5 +1,9 @@
 # fDet
-Website application for fake-news detection using modified AlBERT AI
+Website application for fake-news detection using modified AlBERT AI. This is an open-source repository and can be used by anyone and here's is a complete guide on how to do it
+
+## About us
+We are a group of 5 people that decided to battle the endless war against fake news. This fact checking AI was created over the course of 4 months. Come and see for yourself. <br>
+Website: www.fdet.eu
 
 ## Requirements
 - All libraries in "requirements.txt"
@@ -12,7 +16,7 @@ Input all of these commands into powershell and wait for them to install and dow
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 ```
-if you have AMD GPU then (linux needed
+if you have AMD GPU then (linux needed)
 ```
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.4.2
 ```
@@ -26,24 +30,14 @@ git clone https://github.com/fDet/fdet.git
 open this cloned repository in your desired editor an go to backend/example.py. <br>
 You should see this code
 ```py
-from wikipedia import Wikipedia
 import requests
-import json
 
-wiki = Wikipedia() 
 text = "Your sentence here"
-titles = wiki.search(text)
-sentences = wiki.extract_page(titles[0])
-json_conv = {titles[0]:sentences}
-
-with open("json_wiki.jsonl", 'a', encoding="utf-8") as json_outp:
-    json.dump(json_conv, json_outp, indent=4, separators=", ", ensure_ascii=False)
-    json_outp.write("\n")
 
 req = requests.get("http://127.0.0.1:8002/backend/eval_debug", params={"text":text}).json()
 ```
 To briefly explain what this code does, it searches for a similarty in given sentence to find a title from Wikipedia that refers to it, it then extracts the page and converts it to a json  
-After the AI processes those given values, you should expect all of these values: <br>
+After the AI processes the given text, you should expect these values: <br>
 <br>
 Claim <br>
 Supports <br>
