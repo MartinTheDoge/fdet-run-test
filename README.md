@@ -1,6 +1,7 @@
 # fDet by ByteSpirit
-Website application for fake-news detection using modified AlBERT AI. <br> 
-This is an open-source repository and can be used by anyone and here's is a complete guide on how to do it
+Website application for fake-news detection using modified Roberta AI <br> 
+This app was published under an open-source MIT license <br> 
+Below is the complete guide on how to use it
 
 ## About us
 We are a group of 5 people that decided to battle the endless war against fake news. <br> 
@@ -13,5 +14,11 @@ Website: www.fdet.eu
 - CUDA-enabled device (if you have AMD graphics card see https://github.com/RadeonOpenCompute/ROCm)
 
 ## First time use
-Run a file called "server_run.bat" in main. After that you should see 3 command prompt + 1 for npm install and npm run build that will disappear later. <br>
+Run a file called "server_run.bat" in main. This script run django server, FAST API server and installs + builds npm.
+After both of the servers successfully loading, go into backend/example.py. You should see this code:
+
+
+## Text benchmark and its values
+
+## Known issues
 
