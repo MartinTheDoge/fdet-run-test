@@ -14,9 +14,16 @@ Website: www.fdet.eu
 - CUDA-enabled device (if you have AMD graphics card see https://github.com/RadeonOpenCompute/ROCm)
 
 ## First time use
-Run a file called "server_run.bat" in main. This script run django server, FAST API server and installs + builds npm.
+Run a file called "server_run.bat" in main. This script run django server, FAST API server and installs + builds npm. 
 After both of the servers successfully loading, go into backend/example.py. You should see this code:
 
+import requests
+
+text = "Your sentence here"
+
+req = requests.get("http://127.0.0.1:8002/backend/eval_debug", params={"text":text}).json()
+
+print(req)
 
 ## Text benchmark and its values
 
